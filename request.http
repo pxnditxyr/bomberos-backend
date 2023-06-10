@@ -1,1 +1,56 @@
-GET http://localhost:3002/
+# Auth Service
+POST http://localhost:3002/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "John",
+  "lastName": "Doe",
+  "phone": 12345678,
+  "dni": 12345,
+  "civilStatus": "soltero",
+  "gender": "masculino",
+  "birthDate": "1990-01-01",
+  "email": "jhon.doe1@gmail.com",
+  "password": "12345678"
+}
+
+POST http://localhost:3002/api/auth/signin
+Content-Type: application/json
+
+{
+  "email": "jhon.doe1@gmail.com",
+  "password": "12345678"
+}
+
+GET http://localhost:3002/api/auth/check-auth-status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQwNzA4MywiZXhwIjoxNjg2NDkzNDgzfQ.w2D3A-d8fKemc9Q5hs7gtt9KWLouPL2dbCHKP5WHL7k
+
+# Categories Service
+GET http://localhost:3002/api/categories
+
+GET http://localhost:3002/api/categories/1226b3f4-d242-46a8-b744-d02e1b23be0a
+
+POST http://localhost:3002/api/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "name": "Category 2",
+  "description": "Category 2 description"
+}
+
+PATCH http://localhost:3002/api/categories/15e7c3e0-ad91-4454-aba2-0eca31a5c6fb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "name": "Category 1",
+  "description": "Category 1 description"
+}
+
+DELETE http://localhost:3002/api/categories/15e7c3e0-ad91-4454-aba2-0eca31a5c6fb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+
+# Article Service
+
+

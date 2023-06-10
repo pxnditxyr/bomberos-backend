@@ -1,11 +1,10 @@
-import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Article } from 'src/articles/entities/article.entity';
+import { Category } from 'src/categories/entities/category.entity';
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { CivilStatus } from '../interfaces/valid-civil-status.interface';
 import { Gender } from '../interfaces/valid-genders.interface';
-import { ValidRoles } from '../interfaces/valid-roles.interface';
 
-
-
-Entity( 'users' )
+@Entity( 'users' )
 export class User {
   @PrimaryGeneratedColumn( 'uuid' )
   id: string
@@ -37,10 +36,22 @@ export class User {
   @Column( 'text' )
   password: string
 
-  @Column( 'enum', { enum: ValidRoles, default: ValidRoles.USER })
-  role: ValidRoles
+  @Column( 'text', { array: true, default: [ 'user' ] } )
+  role: string[]
 
-  @Column( 'bool', { default: false } )
+  @OneToMany(
+    () => Article,
+    ( article ) => article.user,
+  )
+  article: Article
+  
+  @OneToMany(
+    () => Category,
+    ( category ) => category.user,
+  )
+  category: Category
+
+  @Column( 'bool', { default: true } )
   status: boolean;
 
   @CreateDateColumn()
