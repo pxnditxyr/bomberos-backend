@@ -49,7 +49,7 @@ export class AuthService {
 
     const user = await this.userRepository.findOne({
       where: { email },
-      select: [ 'id', 'email', 'password' ]
+      select: [ 'id', 'email', 'password', 'name', 'lastName', 'phone', 'dni', 'civilStatus', 'gender', 'birthDate' ]
     })
 
     if ( !user )
@@ -67,7 +67,7 @@ export class AuthService {
     const { id } = user
     const userFromDB = await this.userRepository.findOne({
       where: { id },
-      select: [ 'id', 'email', 'password', 'name', 'lastName' ]
+      select: [ 'id', 'email', 'password', 'name', 'lastName', 'phone', 'dni', 'civilStatus', 'gender', 'birthDate' ]
     })
 
     return {

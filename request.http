@@ -10,7 +10,7 @@ Content-Type: application/json
   "civilStatus": "soltero",
   "gender": "masculino",
   "birthDate": "1990-01-01",
-  "email": "jhon.doe1@gmail.com",
+  "email": "jhon.doe2@gmail.com",
   "password": "12345678"
 }
 
@@ -23,7 +23,7 @@ Content-Type: application/json
 }
 
 GET http://localhost:3002/api/auth/check-auth-status
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQwNzA4MywiZXhwIjoxNjg2NDkzNDgzfQ.w2D3A-d8fKemc9Q5hs7gtt9KWLouPL2dbCHKP5WHL7k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzOWM2ZTkzLWVjZTctNDczMS04NzlkLTEwMThiZjdjMjM3OCIsImlhdCI6MTY4NjUxMjUxMiwiZXhwIjoxNjg2NTk4OTEyfQ.GDq8gB7oOAbXso54W6CTmAAt7JJNuoxPp4NNoELlyzc
 
 # Categories Service
 GET http://localhost:3002/api/categories
