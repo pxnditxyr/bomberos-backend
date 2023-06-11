@@ -1,6 +1,6 @@
 import { User } from 'src/auth/entities/user.entity';
 import { Category } from 'src/categories/entities/category.entity';
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity( 'articles' )
 export class Article {
@@ -29,6 +29,9 @@ export class Article {
   )
   category: Category
 
+  @Column( 'text' )
+  categoryId: string
+
   @ManyToOne(
     () => User,
     ( user ) => user.article,
@@ -44,4 +47,14 @@ export class Article {
 
   @UpdateDateColumn()
   updatedAt: Date
+
+  @BeforeInsert()
+  checkUniqueFields () {
+    this.code = this.code.toUpperCase().trim()
+  }
+
+  @BeforeUpdate()
+  checkUniqueFieldsOnUpdate () {
+    this.checkUniqueFields()
+  }
 }

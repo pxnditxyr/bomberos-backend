@@ -35,7 +35,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwL
 Content-Type: application/json
 
 {
-  "name": "Category 2",
+  "name": "bombas",
   "description": "Category 2 description"
 }
 
@@ -52,5 +52,104 @@ DELETE http://localhost:3002/api/categories/15e7c3e0-ad91-4454-aba2-0eca31a5c6fb
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
 
 # Article Service
+GET http://localhost:3002/api/articles
+
+GET http://localhost:3002/api/articles/e82dcf45-9c2b-44a4-9e19-8ebc33326f10
+
+GET http://localhost:3002/api/articles/name/Article
+
+POST http://localhost:3002/api/articles
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "name": "Article 2",
+  "description": "Article 2 description",
+  "price": 100,
+  "stock": 10,
+  "code": "ART-2",
+  "category": "bombas"
+}
+
+PATCH http://localhost:3002/api/articles/e82dcf45-9c2b-44a4-9e19-8ebc33326f10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "name": "Article 1",
+  "description": "Article 1 description",
+  "price": 100,
+  "stock": 10,
+  "code": "ART-1",
+  "category": "bombas"
+}
+
+DELETE http://localhost:3002/api/articles/e82dcf45-9c2b-44a4-9e19-8ebc33326f10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+
+# Station service without authentication
+GET http://localhost:3002/api/stations
+
+GET http://localhost:3002/api/stations/1
+
+POST http://localhost:3002/api/stations
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "name": "Station 1",
+  "address": "Address 1",
+  "phone": 12345678,
+  "email": "station1@hotmail.com"
+}
+
+PATCH http://localhost:3002/api/stations/46695375-90fc-477b-906d-2991d6e1fb79
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "name": "Station 1 Modified",
+  "address": "Address 1 Modified",
+  "phone": 12345678,
+  "email": "station1@hotmail.com"
+}
+
+DELETE http://localhost:3002/api/stations/1c78ff2d-5aed-470c-846f-9b100726a1a1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+
+# Call Register service
+GET http://localhost:3002/api/call-registers
+
+GET http://localhost:3002/api/call-registers/3a2a57ca-2e04-49cd-8d2d-891cf50fc9d4
+
+POST http://localhost:3002/api/call-registers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "station": "Station 1",
+  "affectedName": "Affected 1",
+  "callAddress": "Call Address 1",
+  "description": "Description 1",
+  "users": [
+    "jhon.doe1@gmail.com"
+  ],
+  "affectedPhone": 12345678
+}
+
+PATCH http://localhost:3002/api/call-registers/438eff9d-4fa7-4a83-95af-ebea0e3ffc56
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Content-Type: application/json
+
+{
+  "station": "Station 1",
+  "affectedName": "Affected 2",
+  "callAddress": "Call Address 2",
+  "description": "Description 2",
+  "affectedPhone": 12345678
+}
+
+DELETE http://localhost:3002/api/call-registers/b116892f-7392-41f7-8422-5444d53d132e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
 
 

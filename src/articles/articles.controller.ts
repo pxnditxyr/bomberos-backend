@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, ParseUUIDPipe } from '@nestjs/common';
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { GetUser } from 'src/auth/decorators/get-user.decorator';
 import { User } from 'src/auth/entities/user.entity';
@@ -6,7 +6,7 @@ import { ArticlesService } from './articles.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
 
-@Controller('articles')
+@Controller( 'articles' )
 export class ArticlesController {
   constructor(private readonly articlesService: ArticlesService) {}
 
@@ -21,21 +21,32 @@ export class ArticlesController {
 
   @Get()
   findAll() {
-    return this.articlesService.findAll();
+    return this.articlesService.findAllPlain();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.articlesService.findOne(+id);
+  @Get( ':id' )
+  findOne( @Param( 'id', ParseUUIDPipe ) id: string ) {
+    return this.articlesService.findOnePlain( id );
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateArticleDto: UpdateArticleDto) {
-    return this.articlesService.update(+id, updateArticleDto);
+  @Get( 'name/:name' )
+  findByName( @Param( 'name' ) name: string ) {
+    return this.articlesService.findByName( name );
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.articlesService.remove(+id);
+  @Patch( ':id' )
+  @Auth()
+  update(
+    @Param( 'id', ParseUUIDPipe ) id: string,
+    @Body() updateArticleDto: UpdateArticleDto,
+    @GetUser() user : User
+  ) {
+    return this.articlesService.update( id, updateArticleDto, user );
+  }
+
+  @Delete( ':id' )
+  @Auth()
+  remove( @Param( 'id', ParseUUIDPipe ) id: string ) {
+    return this.articlesService.remove( id );
   }
 }

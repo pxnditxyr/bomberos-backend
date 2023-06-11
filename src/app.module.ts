@@ -6,7 +6,6 @@ import { StationsModule } from './stations/stations.module';
 import { CategoriesModule } from './categories/categories.module';
 import { ArticlesModule } from './articles/articles.module';
 import { CallRegistersModule } from './call-registers/call-registers.module';
-import { IncidentDetailsModule } from './incident-details/incident-details.module';
 
 @Module({
 
@@ -28,7 +27,6 @@ import { IncidentDetailsModule } from './incident-details/incident-details.modul
     CategoriesModule,
     ArticlesModule,
     CallRegistersModule,
-    IncidentDetailsModule
   ]
 
 })
