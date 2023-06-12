@@ -28,14 +28,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAzOWM2ZTkzL
 # Categories Service
 GET http://localhost:3002/api/categories
 
-GET http://localhost:3002/api/categories/1226b3f4-d242-46a8-b744-d02e1b23be0a
+GET http://localhost:3002/api/categories/a0154b24-0e51-4669-a68a-50789163b32d
 
 POST http://localhost:3002/api/categories
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjUyMjM0MSwiZXhwIjoxNjg2NjA4NzQxfQ.g0beGW7ReBRRtmRizW4l0KgLuXwzqqxfsUXnniMoQlU
 Content-Type: application/json
 
 {
-  "name": "bombas",
+  "name": "bombas3",
   "description": "Category 2 description"
 }
 
@@ -59,7 +59,7 @@ GET http://localhost:3002/api/articles/e82dcf45-9c2b-44a4-9e19-8ebc33326f10
 GET http://localhost:3002/api/articles/name/Article
 
 POST http://localhost:3002/api/articles
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjQyMzY5OSwiZXhwIjoxNjg2NTEwMDk5fQ.rapAET19_8YmjigjG6RwQHn2lr67yYJ2WQdkLxvj6TQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MTJiODAwLWU2MWItNDI4NC1iNmFkLTQyMGQyYTgwZjZiYSIsImlhdCI6MTY4NjUyMjM0MSwiZXhwIjoxNjg2NjA4NzQxfQ.g0beGW7ReBRRtmRizW4l0KgLuXwzqqxfsUXnniMoQlU
 Content-Type: application/json
 
 {

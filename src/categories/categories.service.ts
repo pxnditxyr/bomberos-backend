@@ -38,6 +38,13 @@ export class CategoriesService {
     return categories
   }
 
+  async findAllPlain () {
+    const categories = await this.findAll()
+    return categories.map( ( category ) => ({
+      ...category,
+      user: category.user.email
+    }) )
+  }
   async findOne( term : string ) {
     let category : Category | null
 
@@ -50,6 +57,14 @@ export class CategoriesService {
       throw new BadRequestException( `Category with term ${ term } not found` )
 
     return category
+  }
+
+  async findOnePlain ( term : string ) {
+    const category = await this.findOne( term )
+    return {
+      ...category,
+      user: category.user.email
+    }
   }
 
   async update( id : string, updateCategoryDto : UpdateCategoryDto, user : User ) {
