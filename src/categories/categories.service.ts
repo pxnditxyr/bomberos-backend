@@ -34,7 +34,7 @@ export class CategoriesService {
   }
 
   async findAll() {
-    const categories = await this.categoryRepository.find({ where: { status: true } })
+    const categories = await this.categoryRepository.find()
     return categories
   }
 
@@ -49,9 +49,9 @@ export class CategoriesService {
     let category : Category | null
 
     if ( isUUID( term ) )
-      category = await this.categoryRepository.findOneBy({ id: term, status: true })
+      category = await this.categoryRepository.findOneBy({ id: term })
     else
-      category = await this.categoryRepository.findOneBy({ name: term, status: true })
+      category = await this.categoryRepository.findOneBy({ name: term })
 
     if ( !category )
       throw new BadRequestException( `Category with term ${ term } not found` )

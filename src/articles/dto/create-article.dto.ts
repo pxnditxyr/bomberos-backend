@@ -1,4 +1,4 @@
-import { IsNumber, IsOptional, IsString, MinLength } from "class-validator"
+import { IsBoolean, IsNumber, IsOptional, IsString, MinLength } from "class-validator"
 
 export class CreateArticleDto {
   @IsString()
@@ -22,4 +22,8 @@ export class CreateArticleDto {
 
   @IsString()
   category: string
+
+  @IsBoolean()
+  @IsOptional()
+  status: boolean
 }

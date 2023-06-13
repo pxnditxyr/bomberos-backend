@@ -1,4 +1,4 @@
-import { IsArray, IsNumber, IsPositive, IsString, MinLength } from 'class-validator'
+import { IsArray, IsBoolean, IsNumber, IsOptional, IsPositive, IsString, MinLength } from 'class-validator'
 
 export class CreateCallRegisterDto {
   @IsString()
@@ -23,4 +23,8 @@ export class CreateCallRegisterDto {
   @IsString( { each: true } )
   @IsArray()
   users: string[]
+
+  @IsBoolean()
+  @IsOptional()
+  status: boolean
 }
